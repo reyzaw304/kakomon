@@ -19,13 +19,13 @@ NODE *insert(NODE *node, int item)
 {
     if (node == NULL)
         return newNode(item); // jawaban
-    if (item < node->key)
+    else if (item < node->key)
     {
-        node->left = insert(node, item); // jawaban
+        node->left = insert(node->left, item); // jawaban salah tadi
     }
     else if (item > node->key)
     {
-        node->right = insert(node, item); // jawaban
+        node->right = insert(node->right, item); // jawaban salah tadi
     }
     return node;
 }
@@ -44,7 +44,7 @@ void traversalTwo(NODE *node)
 {
     if (node != NULL)
     {
-        printf("%d", node->key);
+        printf("%d=", node->key);
         traversalTwo(node->left);
         traversalTwo(node->right);
     }
@@ -65,9 +65,9 @@ NODE *searchSub(NODE *node, int item)
 void search(NODE *node, int item)
 {
     if (searchSub(node, item) != NULL)
-        printf("%d is found./n", item);
+        printf("%d is found.\n", item);
     else
-        printf("%d is note found./n", item);
+        printf("%d is note found.\n", item);
 }
 
 #define EOD -1
@@ -78,15 +78,14 @@ int main(int argc, char *argv[])
 {
     NODE *tree1 = NULL, *tree2 = NULL;
     int i;
-
     for (i = 0; a1[i] != EOD; i++)
         tree1 = insert(tree1, a1[i]);
     for (i = 0; a2[i] != EOD; i++)
         tree2 = insert(tree2, a2[i]);
     traversalOne(tree1);
-    printf("/n");
+    printf("\n");
     traversalTwo(tree2);
-    printf("/n");
+    printf("\n");
     search(tree1, 9);
     search(tree2, 4);
 }
