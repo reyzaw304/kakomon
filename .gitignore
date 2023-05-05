@@ -5,4 +5,8 @@ YNU/.vscode/launch.json
 YNU/.vscode/tasks.json
 YNU/R2c.dSYM/Contents/Info.plist
 YNU/R2c.dSYM/Contents/Resources/DWARF/R2c
+<<<<<<< HEAD
 YNU/R2c.exe
+=======
+YNU/runR2
+>>>>>>> b45ea4eea367c8504a7956c990613e52584a9f4f
