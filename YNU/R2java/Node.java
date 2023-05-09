@@ -19,7 +19,7 @@ public class Node {
 
     public void insertnext(Node node) {
         node.next = this.next;
-        this.next = node;
+        this.next = node; // jawaban
     }
 
     public void searchinsert(Node node) {
@@ -46,12 +46,12 @@ public class Node {
             System.out.println();
         } else {
             Node next = this.next();
-            next.print();
+            next.print(); // jawaban
         }
     }
 
     public static Node search(Node node, int key) {
-        while (node != null)
+        while (node != null) // jawaban
             if (node.key() == key)
                 return node;
             else
