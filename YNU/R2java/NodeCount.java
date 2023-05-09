@@ -4,7 +4,7 @@ public class NodeCount extends Node {
     private int count;
 
     public NodeCount(int key) {
-        this.key = key;
+        super(key);
         this.count = 1;
     }
 
@@ -12,7 +12,7 @@ public class NodeCount extends Node {
         if (this.key() == node.key())
             this.count++;
         else
-            this.next = node;
+            super.insertnext(node);
     }
 
     public void searchinsert(NodeCount node) {
