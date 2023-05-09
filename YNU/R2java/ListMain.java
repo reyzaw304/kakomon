@@ -1,8 +1,13 @@
+package R2java;
+
 public class ListMain {
 	private static final int EOD = -1;
+	private static final int A[] = { 3, 5, 3, 2, 5, 2, 5, EOD };
 	private static int i;
 
-	private static void resetData() {1=0};
+	private static void resetData() {
+		i = 0;
+	}
 
 	private static int getData() {
 		return A[i++];
@@ -21,6 +26,10 @@ public class ListMain {
 		}
 		startNode.print();
 
+		if ((hereNode = Node.search(startNode, 5)) != null)
+			hereNode.deletenext();
+		startNode.print();
+
 		resetData();
 		startNodeCount = new NodeCount(getData());
 		while ((key = getData()) != EOD) {
@@ -34,15 +43,3 @@ public class ListMain {
 		startNodeCount.print();
 	}
 }
-
-public class Node(
-	private int key;
-	private Node next;
-
-	public Node(int key) {
-		this.key=key;
-		this.next=null;
-	}
-
-	public int key() {return this.key;}
-)
