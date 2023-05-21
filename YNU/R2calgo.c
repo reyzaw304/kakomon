@@ -2,26 +2,21 @@
 #define EOD -1
 int a[] = {1, 1, 1, EOD};
 
-void print(int);
-void f1(int[]);
-void f2(int[]);
-void f3(int[]);
-
 int main(void)
 {
     int i, j = 1;
 
     for (i = 0; i < 3; i++)
         f1(a);
-    print(j++);
+    print(j++); // 1:<1,4,7>
 
     for (i = 0; i < 3; i++)
         f2(a);
-    print(j++);
+    print(j++); // 2:<10,16,22>
 
     for (i = 0; i < 3; i++)
         f3(a);
-    print(j++);
+    print(j++); // 3:<1006,2132,4520>
 
     return 0;
 }
@@ -29,12 +24,45 @@ int main(void)
 void print(int n)
 {
     int i;
-    printf("%d:<%d", n, a[0])
-        i = 1;
+    printf("%d:<%d", n, a[0]);
+    i = 1;
     while (a[i] != EOD)
     {
         printf(",%d", a[i]);
         i++;
     }
-    printf(">¥n");
+    printf(">\n");
+}
+
+void f1(int x[])
+{
+    int a = 0;
+    int i = 0;
+    while (x[i] != EOD)
+    {
+        x[i] += a;
+        a++;
+        i++;
+    }
+}
+void f2(int x[])
+{
+    static int a = 0;
+    int i = 0;
+    while (x[i] != EOD)
+    {
+        x[i] += a;
+        a++;
+        i++;
+    }
+}
+void f3(int *x)
+{
+    static int a = 0;
+    while (*x != EOD)
+    {
+        *x += a;
+        a += *x;
+        x++;
+    }
 }

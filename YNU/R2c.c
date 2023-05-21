@@ -67,7 +67,7 @@ void search(NODE *node, int item)
     if (searchSub(node, item) != NULL)
         printf("%d is found.\n", item);
     else
-        printf("%d is note found.\n", item);
+        printf("%d is not found.\n", item);
 }
 
 #define EOD -1
