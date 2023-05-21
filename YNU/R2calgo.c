@@ -58,7 +58,7 @@ void f2(int x[])
 }
 void f3(int *x)
 {
-    static int a = 0;
+    static int a = 0; // beda sama a yang diatas. atau dideclare ulang?
     while (*x != EOD)
     {
         *x += a;
