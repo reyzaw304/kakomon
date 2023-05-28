@@ -2,25 +2,6 @@
 #define EOD -1
 int a[] = {1, 1, 1, EOD};
 
-int main(void)
-{
-    int i, j = 1;
-
-    for (i = 0; i < 3; i++)
-        f1(a);
-    print(j++); // 1:<1,4,7>
-
-    for (i = 0; i < 3; i++)
-        f2(a);
-    print(j++); // 2:<10,16,22>
-
-    for (i = 0; i < 3; i++)
-        f3(a);
-    print(j++); // 3:<1006,2132,4520>
-
-    return 0;
-}
-
 void print(int n)
 {
     int i;
@@ -65,4 +46,23 @@ void f3(int *x)
         a += *x;
         x++;
     }
+}
+
+int main(void)
+{
+    int i, j = 1;
+
+    for (i = 0; i < 3; i++)
+        f1(a);
+    print(j++); // 1:<1,4,7>
+
+    for (i = 0; i < 3; i++)
+        f2(a);
+    print(j++); // 2:<10,16,22>
+
+    for (i = 0; i < 3; i++)
+        f3(a);
+    print(j++); // 3:<1006,2132,4520>
+
+    return 0;
 }

@@ -22,16 +22,16 @@ int main(void)
         p = np;
         i++;
     }
-    func(p);
+    func(p); // 73 84 27 32 51 98 63 14
     np = (struct st *)malloc(sizeof(struct st));
     np->k = 40;
     np->n = p->n->n->n;
-    p->n->n->n = np->n;
-    func(p);
+    p->n->n->n = np;
+    func(p); // 73 84 27 70 32 51 98 63 14
     np = p->n->n;
-    p->n->n = np;
+    p->n->n = np->n;
     free(np);
-    func(p);
+    func(p); // 73 84 70 32 51 98 63 14
     do
     {
         np = p;
@@ -49,8 +49,8 @@ int main(void)
             np = np->n;
         } while (np->n != NULL);
     } while (found);
-    func(p);
-    printf("count = %d/n", count);
+    func(p);                       // 14 32 51 63 70 73 84 98
+    printf("count = %d\n", count); // count = 19
     return 0;
 }
 
@@ -58,8 +58,8 @@ void func(struct st *q)
 {
     while (q != NULL)
     {
-        printf("%d", q->k);
+        printf("%d ", q->k);
         q = q->n;
     }
-    printf("/n");
+    printf("\n");
 }
