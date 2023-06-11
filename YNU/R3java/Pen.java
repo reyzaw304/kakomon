@@ -19,7 +19,7 @@ public class Pen {
     }
 
     public void Forward() {
-        d = this.d;
+        // d = this.d;
         if (d == 0) {
             this.x = this.x + 1;
         } else if (d == 90) {
