@@ -14,15 +14,19 @@ public class Man {
         this.x = this.x + this.speed;
         this.direction = 'r';
     }
+
     protected void Up() {
         this.y = this.y + this.speed;
-        this.direction = 'y';
+        this.direction = 'u';
     }
+
     protected void Left() {
         this.x = this.x - this.speed;
         this.direction = 'l';
     }
+
     protected void Down() {
-        // [C]
+        this.y = this.y - this.speed;// ans
+        this.direction = 'd';
     }
 }
