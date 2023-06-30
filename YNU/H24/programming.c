@@ -40,19 +40,19 @@ void printitem(struct item a[], int n, int key)
     printf("\n");
 }
 
-void procedure(struct item a[], int n, int key)
-{
-    int i, j, k;
+// void procedure(struct item a[], int n, int key)
+// {
+//     int i, j, k;
 
-    for (i = n - 1; i > 0; i--)
-    {
-        k = i;
-        for (j = 0; j < i; j++)
-            if (a[k].number[key] > a[j].number[key])
-                k = j;
-        swap(a, i, k);
-    }
-}
+//     for (i = n - 1; i > 0; i--)
+//     {
+//         k = i;
+//         for (j = 0; j < i; j++)
+//             if (a[k].number[key] > a[j].number[key])
+//                 k = j;
+//         swap(a, i, k);
+//     }
+// }
 
 void swap(struct item a[], int n1, int n2)
 {
@@ -63,17 +63,17 @@ void swap(struct item a[], int n1, int n2)
 }
 
 // risuto 3: procedure satunya
-// void procedure(struct item a[], int n, int key)
-// {
-//     int j, k;
+void procedure(struct item a[], int n, int key)
+{
+    int j, k;
 
-//     if (n > 1)
-//     {
-//         k = n - 1;
-//         for (j = 0; j < n - 1; j++)
-//             if (a[k].number[key] > a[j].number[key])
-//                 k = j;
-//         swap(a, n - 1, k);
-//         [イ]
-//     }
-// }
+    if (n > 1)
+    {
+        k = n - 1;
+        for (j = 0; j < n - 1; j++)
+            if (a[k].number[key] > a[j].number[key])
+                k = j;
+        swap(a, n - 1, k);
+        procedure(a, n - 1, key);
+    }
+}
